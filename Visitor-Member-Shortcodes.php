@@ -17,10 +17,7 @@ class VisitorMemberShortcodes {
 	private static function shortcode( $atts, $content = null, $code = null, $condition = false ){
 		if( ! isset( $content ) )
 			return '';
-		if( $condition ){
-			return do_shortcode( $content );
-		}
-		return '';
+		return $condition ? do_shortcode( $content ) : '';
 	}
 
 	public static function visitor( $atts, $content = null, $code = null ){
